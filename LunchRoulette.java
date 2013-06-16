@@ -23,12 +23,12 @@ public class LunchRoulette{
 		//  open up standard input
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		try {
+		try{
 		  input = br.readLine();
 		  size_of_groups = Integer.parseInt(input);
 		} 
 
-		catch (IOException ioe) {
+		catch (IOException e){
 			System.out.println("IO error trying to read line!");
 			System.exit(1);
 		}
@@ -46,7 +46,8 @@ public class LunchRoulette{
 
 		catch(IOException e){
 			e.printStackTrace();
-		
+		}	
+
 		//load all the names from the text file
 		try{
 			File file = new File("./team.txt");
