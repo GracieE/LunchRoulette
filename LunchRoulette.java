@@ -14,8 +14,8 @@ public class LunchRoulette{
 		String strline;
 		int size_of_groups = 0;
 		String input;
-
-
+	
+	
 		//Retrieve the size of the groups from the user
 		System.out.println("Welcome to Lunch Roulette!");
 		System.out.println("Please enter the size of each group:");
@@ -34,35 +34,35 @@ public class LunchRoulette{
       	}
 
 
-		//load all the names from the text file
-		try{
-			File file = new File("./team.txt");
-			BufferedReader reader = new BufferedReader(new FileReader(file));
-			
-			//read in each line from file and store in the arraylist
-			while ((strline = reader.readLine()) != null ){
-				members.add(strline);
-			}
-
-		}
-		catch(IOException e){
-			e.printStackTrace();
+	//load all the names from the text file
+	try{
+		File file = new File("./team.txt");
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		
+		//read in each line from file and store in the arraylist
+		while ((strline = reader.readLine()) != null ){
+			members.add(strline);
 		}
 
-		//Let's try this shuffle thing on a collection
-		 Collections.shuffle(members);
-
-		//print all the names from the text file and split into groups
-		int groupNum;
-		for (int i=0; i < members.size(); i++){
-			//split into groups
-			if((i % size_of_groups) == 0){
-				groupNum = (i/size_of_groups) + 1;
-				System.out.println("\nGROUP #" + groupNum);
-			}
-			System.out.println(members.get(i));
-		}
 	}
+	catch(IOException e){
+		e.printStackTrace();
+	}
+
+	//Let's try this shuffle thing on a collection
+	 Collections.shuffle(members);
+
+	//print all the names from the text file and split into groups
+	int groupNum;
+	for (int i=0; i < members.size(); i++){
+		//split into groups
+		if((i % size_of_groups) == 0){
+			groupNum = (i/size_of_groups) + 1;
+			System.out.println("\nGROUP #" + groupNum);
+		}
+		System.out.println(members.get(i));
+	}
+}
 
 
 	//get a random number from the array
