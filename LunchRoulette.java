@@ -14,8 +14,8 @@ public class LunchRoulette{
 		String strline;
 		int size_of_groups = 0;
 		String input;
-
-
+	
+	
 		//Retrieve the size of the groups from the user
 		System.out.println("Welcome to Lunch Roulette!");
 		System.out.println("Please enter the size of each group:");
@@ -33,7 +33,6 @@ public class LunchRoulette{
 			System.exit(1);
 		}
 
-
 		//load all the names from the text file
 		try{
 			File file = new File("./team.txt");
@@ -45,6 +44,20 @@ public class LunchRoulette{
 			}
 		}
 
+		catch(IOException e){
+			e.printStackTrace();
+		
+		//load all the names from the text file
+		try{
+			File file = new File("./team.txt");
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			
+			//read in each line from file and store in the arraylist
+			while ((strline = reader.readLine()) != null ){
+				members.add(strline);
+			}
+
+		}
 		catch(IOException e){
 			e.printStackTrace();
 		}
