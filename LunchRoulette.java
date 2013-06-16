@@ -21,17 +21,17 @@ public class LunchRoulette{
 		System.out.println("Please enter the size of each group:");
 		
 		//  open up standard input
-      	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		try {
-          input = br.readLine();
-          size_of_groups = Integer.parseInt(input);
-      	} 
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-      	catch (IOException ioe) {
-	        System.out.println("IO error trying to read line!");
-	        System.exit(1);
-      	}
+		try {
+		  input = br.readLine();
+		  size_of_groups = Integer.parseInt(input);
+		} 
+
+		catch (IOException ioe) {
+			System.out.println("IO error trying to read line!");
+			System.exit(1);
+		}
 
 
 		//load all the names from the text file
@@ -43,8 +43,8 @@ public class LunchRoulette{
 			while ((strline = reader.readLine()) != null ){
 				members.add(strline);
 			}
-
 		}
+
 		catch(IOException e){
 			e.printStackTrace();
 		}
